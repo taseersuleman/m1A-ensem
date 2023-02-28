@@ -721,7 +721,7 @@ try:
             len2 = len1 - 1
 
             for i in range(len1):
-                if abc[i] == "U":
+                if abc[i] == "A":
                     count.append(i)
 
             len3 = len(count)
@@ -732,13 +732,13 @@ try:
                     n = len2 - s
                     m = 20 - s
                     # n = 20 - m
-                    str1 = ("A" * m)
+                    str1 = ("U" * m)
                     str2 = abc[s - s:s]
 
                     if n <= 20:
                         o = 20 - n
                         str4 = abc[s:s + n + 1]
-                        str5 = ("A" * o)
+                        str5 = ("U" * o)
                         str6 = "".join((str1, str2, str4, str5))
                         keeper.append(str6)
                     elif n > 20:
@@ -753,7 +753,7 @@ try:
                     if n1 <= 20:
                         o1 = 20 - n1
                         o1 = o1 + 1
-                        str9 = ("A" * o1)
+                        str9 = ("U" * o1)
                         str8 = abc[s:s + n1 - 1]
 
                         str10 = "".join((str7, str8, str9))
@@ -788,7 +788,7 @@ try:
             # Y = dataset[:, -1]
             std_scale = StandardScaler().fit(W)
             W = std_scale.transform(W)
-            load_model = pickle.load(open('model.pkl', 'rb'))
+            load_model = pickle.load(open('modell.pkl', 'rb'))
             pred = load_model.predict(W)
             output_proba = load_model.predict_proba(W)[:, 1]
 
