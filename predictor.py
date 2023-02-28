@@ -788,7 +788,7 @@ try:
             # Y = dataset[:, -1]
             std_scale = StandardScaler().fit(W)
             W = std_scale.transform(W)
-            load_model = pickle.load(open('modell.pkl', 'rb'))
+            load_model = pickle.load(open('model.pkl', 'rb'))
             pred = load_model.predict(W)
             output_proba = load_model.predict_proba(W)[:, 1]
 
