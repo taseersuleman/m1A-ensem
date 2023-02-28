@@ -801,7 +801,7 @@ try:
                 st.subheader("Sequence")
                 st.write(keeper[i])
 
-                if output_proba[i] > 0.3:
+                if output_proba[i] > 0.5:
                     st.info("Output =  m1A-site")
                 else:
                     st.info("Output = Non-m1A-site")
