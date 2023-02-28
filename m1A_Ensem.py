@@ -8,10 +8,10 @@ selected2 = option_menu(None, ["Home", "Predictor", "Dataset", "Citations"],
 # selected2
 
 if selected2 == "Home":
-    st.header("iDHU-Ensem")
-    #st.subheader("The DHU-Pred is a web-server for the prediction of Dihydrouridine in transfer RNA (tRNA) "
+    st.header("m1A-Ensem")
+    #st.subheader("A web-server for the prediction of 1-methyladenosine in RNA"
      #            "modifications.")
-    st.write("Dihydrouridine (D) is one of the most significant post transcriptional modifications (PTM) that is abundantly found in eukaryotes. This modification is involved in the folding and conformational flexibility of transfer RNA (tRNA) and is also responsible for pulmonary carcinogenesis in humans. The identification of D sites was carried out through conventional laboratory methods; however, those were expensive and time-consuming. The availability of sequence data helped in the development of computationally intelligent models that enhance the identification of D sites. The current study focused on the identification of D sites in tRNA sequences using ensemble models such as bagging, boosting, and stacking. The models were evaluated through an independent set test and k-fold cross validation. The results revealed that the stacking ensemble model outperformed all the ensemble models by revealing 0.98 accuracy, 0.98 specificity, 0.97 sensitivity, and 0.92 Matthews Correlation Coefficient. The proposed model, iDHU-Ensem, was also compared with preexisting predictors using an independent test. The accuracy scores have shown that the proposed model in this research study performed better than available predictors. An online web-based server for the proposed model was also made for the researchers."
+    st.write("The current study proposed a novel framework for the prediction of m1A sites using ensemble models. These models were categorized into blending, bagging, and boosting. It's worth mentioning here that RAMPred, iRNA3typeA, ISGm1A and DeepMRMP have used the same dataset for training and validation. The dataset is composed of RNA sequences belonging to three species: Homosapiens, Saccharomyces cerevisiae, Mus musculus and Schizosaccharomyces pombe. The extraction of meaningful attributes from the sequences was carried out by considering the position and formation of nucleotide bases. Statistical moments were calculated that helped in feature dimensionality reduction in few matrics developed for attributes extraction. The performance of these ensemble models was evaluated through k-fold cross validation and independent set testing."
              )
     #image = Image.open('pseudo.PNG')
     #st.image(image, width=400)
@@ -25,7 +25,7 @@ elif selected2 == "Predictor":
 
 elif selected2 == "Dataset":
     #st.subheader("Data Set")
-    st.info("Poisitive Samples (tRNA sequences with D-sites)")
+    st.info("Positive Samples (modified m1A-sites)")
     with open("Sup1.fasta", "rb") as file:
         btn = st.download_button(
             label="Download file",
@@ -33,7 +33,7 @@ elif selected2 == "Dataset":
             file_name="Sup1.fasta",
             mime=""
         )
-    st.info("Negative Samples (tRNA sequences with Non-D sites")
+    st.info("Negative Samples (Non-modified m1A sites")
     with open("Sup2.fasta", "rb") as file:
         btn = st.download_button(
             label="Download file",
