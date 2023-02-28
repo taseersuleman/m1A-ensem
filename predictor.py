@@ -9,7 +9,7 @@ from PIL import Image
 from sklearn.preprocessing import StandardScaler
 
 try:
-    str22 = "GGUUUCCGUAGUGUAGUGGUUAUCACGUUCGCCUCACACGC"
+    str22 = "GGGCCAGGUGCCUGAGAUUGAUGUUCCAUCCUACCUGCCUG"
     st.subheader("Kindly click the EXAMPLE button for sample RNA sequence")
     if st.button('Example'):
         st.write(str22)
@@ -788,7 +788,7 @@ try:
             # Y = dataset[:, -1]
             std_scale = StandardScaler().fit(W)
             W = std_scale.transform(W)
-            load_model = pickle.load(open('DHU-Prediction-app.pkl', 'rb'))
+            load_model = pickle.load(open('Adaboost.pkl', 'rb'))
             pred = load_model.predict(W)
             output_proba = load_model.predict_proba(W)[:, 1]
 
@@ -802,9 +802,9 @@ try:
                 st.write(keeper[i])
 
                 if output_proba[i] > 0.3:
-                    st.info("Output =  D-site")
+                    st.info("Output =  m1A-site")
                 else:
-                    st.info("Output = Non-D-site")
+                    st.info("Output = Non-m1A-site")
 
 
     input_seq()
