@@ -26,18 +26,18 @@ elif selected2 == "Predictor":
 elif selected2 == "Dataset":
     #st.subheader("Data Set")
     st.info("Positive Samples (modified m1A-sites)")
-    with open("Sup1", "rb") as file:
+    with open("Sup1.fas", "rb") as file:
         btn = st.download_button(
             label="Download file",
             data=file,
-            file_name="Sup1",
+            file_name="Sup1.fas",
             mime=""
         )
     st.info("Negative Samples (Non-modified m1A sites")
-    with open("Sup2", "rb") as file:
+    with open("Sup2.fas", "rb") as file:
         btn = st.download_button(
             label="Download file",
             data=file,
-            file_name="Sup2",
+            file_name="Sup2.fas",
             mime=""
         )
